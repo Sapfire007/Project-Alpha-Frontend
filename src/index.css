@@ -168,3 +168,11 @@ spline-viewer {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ElevenLabs Convai Widget Styling */
+elevenlabs-convai {
+  z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

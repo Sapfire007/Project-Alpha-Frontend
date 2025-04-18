@@ -1,8 +1,28 @@
 
+import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const handleChatWithNisha = () => {
+    setIsChatOpen(true);
+    
+    // Create the ElevenLabs Convai element if it doesn't exist
+    if (!document.querySelector('elevenlabs-convai')) {
+      const convaiElement = document.createElement('elevenlabs-convai');
+      convaiElement.setAttribute('agent-id', 'gMSQsbN82OlbCp4YAZX5');
+      document.body.appendChild(convaiElement);
+    } else {
+      // If it exists but was hidden, make it visible
+      const convaiElement = document.querySelector('elevenlabs-convai');
+      if (convaiElement) {
+        (convaiElement as HTMLElement).style.display = 'block';
+      }
+    }
+  };
+
   return (
     <section id="about" className="py-24 relative">
       {/* Background elements */}
@@ -59,8 +79,12 @@ const About = () => {
                   She can process your blood reports in any format, communicate in multiple languages, and provide real-time updates on your analysis.
                 </p>
                 
-                <div className="pt-6 animate-fade-in" style={{ animationDelay: "600ms" }}>
-                  <Button className="quantum-button">
+                <div className="pt-4 animate-fade-in" style={{ animationDelay: "600ms" }}>
+                  <Button 
+                    className="quantum-button flex items-center gap-2 group"
+                    onClick={handleChatWithNisha}
+                  >
+                    <Sparkles size={18} className="text-white" />
                     Chat with Nisha
                   </Button>
                 </div>

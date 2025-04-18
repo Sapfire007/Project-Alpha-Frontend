@@ -179,7 +179,7 @@ const Demo = () => {
         <div className="max-w-5xl mx-auto glassmorphism rounded-2xl p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-orbitron mb-6">Demo Walkthrough</h3>
+              <h3 className="text-xl font-orbitron mb-6">Quantum Playground</h3>
               
               <div className="space-y-6">
                 {steps.map((step, index) => (
@@ -246,13 +246,19 @@ const Demo = () => {
             </div>
             
             <div className="relative rounded-xl overflow-hidden">
-              <div className={`aspect-[9/16] rounded-xl p-5 backdrop-blur-sm border border-quantum/30 ${isProcessing ? 'quantum-processing-bg' : 'bg-quantum-bg/80'}`}
-                   style={isProcessing ? {
-                     backgroundImage: 'url(https://img.pikbest.com/09/42/51/539pIkbEsTcVq.mp4)',
-                     backgroundSize: 'cover',
-                     backgroundPosition: 'center'
-                   } : undefined}>
-                <div className="h-full flex flex-col bg-black/50 rounded-lg p-4">
+              <div className={`aspect-[9/16] rounded-xl p-5 backdrop-blur-sm border border-quantum/30 ${isProcessing ? 'quantum-processing-bg' : 'bg-quantum-bg/80'}`}>
+                {isProcessing && (
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <video 
+                      className="w-full h-full object-cover"
+                      src="https://img.pikbest.com/09/42/51/539pIkbEsTcVq.mp4"
+                      autoPlay
+                      loop
+                      muted
+                    />
+                  </div>
+                )}
+                <div className="h-full flex flex-col bg-black/50 rounded-lg p-4 relative z-10">
                   {showConsole ? (
                     <div 
                       ref={consoleRef}
