@@ -123,7 +123,7 @@ Use these credentials to access the login-protected areas:
 ## 📬 Contact & Contribution
 
 We'd love feedback and collabs!  
-📧 Email us: [hello@bloodline.ai](mailto:hello@bloodline.ai)
+📧 Email us: [sapfire955@gmail.com](mailto:sapfire955@gmail.com)
 
 ---
 
